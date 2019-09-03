@@ -24,11 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_id);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-
         recyclerView.setLayoutManager(linearLayoutManager);
-
         recyclerView.setHasFixedSize(true);
-
+         //hola perro
         ApiUtil.getServiceClass().getAllPost().enqueue(new Callback<List<ApiObject>>() {
             @Override
             public void onResponse(Call<List<ApiObject>> call, Response<List<ApiObject>> response) {
