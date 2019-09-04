@@ -20,7 +20,8 @@ class ApiObject {
     @Expose
     private String clase;
 
-    public ApiObject(String title, String description) {
+    public ApiObject(String title, String description,String perfil) {
+        this.foto=perfil;
         this.nombre = title;
         this.clase = description;
     }

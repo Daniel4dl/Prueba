@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder>{
@@ -30,6 +32,9 @@ public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder>{
         ApiObject apiObject = apiObjectList.get(position);
         holder.title.setText(apiObject.getNombre());
         holder.description.setText(apiObject.getClase());
+        Picasso.get().load(apiObject.getFoto()).into(holder.imageView);
+
+
     }
 
     @Override

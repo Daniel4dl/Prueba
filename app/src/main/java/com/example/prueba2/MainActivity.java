@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import java.util.List;
 
@@ -35,6 +36,20 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "Returned count " + postList.size());
                     NewAdapter adapter = new NewAdapter(getApplicationContext(), postList);
                     recyclerView.setAdapter(adapter);
+
+                   
+                    recyclerView.addOnItemTouchListener(
+                            new RecyclerItemClickListener(getApplicationContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+
+                        }
+
+                        @Override
+                        public void onLongItemClick(View view, int position) {
+
+                        }
+                    }));
                 }
             }
 
